@@ -1,7 +1,7 @@
 {
   "name": "typewriter",
   "version": "1.0.0",
-  "description": "Typewriter Ghost Theme",
+  "description": "Typewriter Ghost Theme (modified by Jay Elmore)",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.0",
