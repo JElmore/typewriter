@@ -8,7 +8,7 @@ the {body} of the default.hbs template, which contains our header/footer. }}
 
 <header class="post-header">
   <h2 class="post__title">{{ title }}</h2>
-  <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+  <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time><span class="post__primarytag">: {{#primary_tag}}<a href="{{url}}">{{name}}</a>{{/primary_tag}}</span>
 </header>
 
 <main class="post-view-content" role="main">
