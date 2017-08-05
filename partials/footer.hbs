@@ -11,26 +11,20 @@
     <div class="column medium-6 large-6">
       <section>
         <ul class="social-nav">
+        {{#if @blog.twitter}}
           <li>
-            <a href="#" target="_blank">
+            <a href="{{twitter_url}}" target="_blank">
               <span data-icon="ei-sc-twitter" data-size="s"></span>
             </a>
           </li>
+        {{/if}}
+        {{#if @blog.facebook}}
           <li>
-            <a href="#" target="_blank">
+            <a href="{{facebook_url}}" target="_blank">
               <span data-icon="ei-sc-facebook" data-size="s"></span>
             </a>
           </li>
-          <li>
-            <a href="#" target="_blank">
-              <span data-icon="ei-sc-instagram" data-size="s"></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank">
-              <span data-icon="ei-sc-github" data-size="s"></span>
-            </a>
-          </li>
+        {{/if}}
         </ul>
       </section>
     </div>
