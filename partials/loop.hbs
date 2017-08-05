@@ -6,7 +6,7 @@
     <h2 class="post__title">
       <a itemprop="headline" href="{{url}}">{{title}}</a>
     </h2>
-    <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+    <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time><span class="post__primarytag">: {{#primary_tag}}<a href="{{url}}">{{name}}</a>{{/primary_tag}}</span>
   </header>
 
   <section class="post__excerpt">
