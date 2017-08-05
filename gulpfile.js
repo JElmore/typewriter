@@ -5,7 +5,7 @@
   // Include Gulp & tools
   var gulp = require('gulp'),
       sass         = require('gulp-sass'),
-      minifycss    = require('gulp-minify-css'),
+      cleancss    = require('gulp-clean-css'),
       autoprefixer = require('gulp-autoprefixer'),
       runSequence  = require('run-sequence'),
       rename       = require('gulp-rename'),
@@ -25,7 +25,7 @@
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
+    .pipe(cleancss())
     .pipe(gulp.dest('./assets/css'));
   });
 
