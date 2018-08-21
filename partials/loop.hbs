@@ -14,11 +14,11 @@
   </section>
 
   <footer class="post__meta">
-    {{#if author.profile_image}}
-    <img class="post__meta__author-thumb" src="{{author.profile_image}}" alt="{{author.name}}" nopin="nopin" />
+    {{#if primary_author.profile_image}}
+    <img class="post__meta__author-thumb" src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" nopin="nopin" />
     {{/if}}
     <span class="post__meta__author-name" itemprop="author">
-      {{author}}
+      {{primary_author}}
     </span>
   </footer>
 
