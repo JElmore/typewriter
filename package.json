@@ -1,7 +1,7 @@
 {
   "name": "typewriter-je",
-  "version": "1.9.9",
-  "description": "Typewriter Ghost Theme (modified by Jay Elmore)",
+  "version": "3.9.9",
+  "description": "Typewriter Ghost Theme (originally from Aspire Themes, modified by Jay Elmore)",
   "main": "gulpfile.js",
   "keywords": ["ghost-theme"],
   "dependencies": {
@@ -15,9 +15,9 @@
     "gulp-util": "^3.0.7"
   },
   "author": {
-    "name": "Aspire Themes",
-    "email": "aspirethemes@gmail.com",
-    "url": "https://aspirethemes.com/"
+    "name": "Jay Elmore",
+    "email": "jelmore49@gmail.com",
+    "url": "https://github.com/JElmore/typewriter"
   },
   "config": {
     "posts_per_page": 15
