@@ -1,8 +1,10 @@
+# TypeWriter
+
 TypeWriter is a minimalist Ghost theme, focus on typography, white space, and gives your readers a better reading experience.
 
-* * *
+-----
 
-### Features
+## Features
 
 - Minimal design
 - Beautiful Typography
@@ -21,26 +23,26 @@ TypeWriter is a minimalist Ghost theme, focus on typography, white space, and gi
 - Social media icons
 - Gulp & SASS Source Files
 
-* * *
+-----
 
-### Theme Development
+## Theme Development
 
-TypeWriter is using [Gulp](https://github.com/gulpjs/gulp) to compile [Sass](http://sass-lang.com/). This improve the development flow, and making it much faster.
+TypeWriter is using [Gulp](https://github.com/gulpjs/gulp) to compile [Sass](http://sass-lang.com/). This improves the development flow, and makes it much faster.
 
 First make sure you have [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed, then run the the following commands in the theme root directory to install npm dependencies.
 
-```
+```bash
 npm install
 ```
 
 To start Gulp, run:
 
-```
+```bash
 gulp
 ```
 
 This will compile Sass, and start watching changes as you edit files.
 
-* * *
+-----
 
 👉 Visit [aspirehemes.com](http://aspirethemes.com) for more Ghost, WordPress, and Jekyll themes.
