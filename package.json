@@ -20,6 +20,7 @@
     "url": "https://github.com/JElmore/typewriter"
   },
   "config": {
-    "posts_per_page": 15
+    "posts_per_page": 15,
+    "card_assets": true
   }
 }
