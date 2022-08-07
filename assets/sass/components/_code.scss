@@ -28,5 +28,5 @@ pre {
 
 // Inline code
 p code {
-  padding: ($line-height__medium / 8) ($line-height__medium / 4);
+  padding: calc($line-height__medium / 8) calc($line-height__medium / 4);
 }

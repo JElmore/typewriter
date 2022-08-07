@@ -44,7 +44,7 @@
 
 .post-navigation__link {
   text-decoration: none;
-  padding: ($line-height__base / 4) ($line-height__base / 2);
+  padding: calc($line-height__base / 4) calc($line-height__base / 2);
 }
 
 // Newer Posts & Older Posts

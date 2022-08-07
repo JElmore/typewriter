@@ -6,7 +6,7 @@
 
 .logo {
 
-  margin-bottom: $line-height__medium / 2;
+  margin-bottom: calc($line-height__medium / 2);
 
   a {
     transition: .4s;

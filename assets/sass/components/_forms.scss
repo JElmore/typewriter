@@ -17,13 +17,13 @@ textarea {
   max-width: 100%;
   margin-bottom: 0;
   border: 1px solid $color__type;
-  padding: ($line-height__base / 4) ($line-height__base / 2);
+  padding: calc($line-height__base / 4) calc($line-height__base / 2);
   line-height: $line-height__base;
   outline: none;
   font-weight:inherit;
 
   @media #{$medium-down} {
-    padding: ($line-height__small / 4) ($line-height__small / 2);
+    padding: calc($line-height__small / 4) calc($line-height__small / 2);
   }
 
   &:focus {

@@ -23,7 +23,7 @@
     }
 
     @media #{$medium-down} {
-      padding: ($line-height__small / 4) 0;
+      padding: calc($line-height__small / 4) 0;
       border-bottom: 1px solid $border-color;
     }
   }
@@ -45,7 +45,7 @@
     display: block;
     position: absolute;
     top: 0;
-    right: $line-height__base / 2;
+    right: calc($line-height__base / 2);
     font-size: $font-size__small;
     text-transform: uppercase;
     letter-spacing: 1px;

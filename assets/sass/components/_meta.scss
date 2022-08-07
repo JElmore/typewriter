@@ -9,8 +9,8 @@
   margin-bottom: $line-height__base;
 
   a {
-    padding: ($line-height__small / 2) $line-height__small;;
-    margin-right: $line-height__base / 4;
+    padding: calc($line-height__small / 2) $line-height__small;;
+    margin-right: calc($line-height__base / 4);
     background-color: $grey-bg;
     text-decoration: none;
   }
@@ -23,5 +23,5 @@
 
 .share-link {
   font-size: $font-size__small;
-  margin-right: $line-height__base / 4;
+  margin-right: calc($line-height__base / 4);
 }

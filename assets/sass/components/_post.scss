@@ -15,7 +15,7 @@
   }
 }
 
-.post-header { margin-bottom: $line-height__base / 4; }
+.post-header { margin-bottom: calc($line-height__base / 4); }
 
 .post__title {
   margin-top: 0;
@@ -39,7 +39,7 @@
 .post__excerpt p {
   font-size: $font-size__small;
   line-height: $line-height__medium;
-  margin-bottom: $line-height__base / 2;
+  margin-bottom: calc($line-height__base / 2);
 }
 
 .post__meta { line-height: $line-height__medium; }

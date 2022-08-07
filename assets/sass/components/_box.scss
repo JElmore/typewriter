@@ -12,15 +12,15 @@
   overflow: hidden;
 
   @media #{$medium-down} {
-    padding: ($line-height__base / 2) 0;
-    margin-bottom: $line-height__base / 2;
+    padding: calc($line-height__base / 2) 0;
+    margin-bottom: calc($line-height__base / 2);
   }
 }
 
 .box__icon {
   float: left;
   width: $line-height__base;
-  margin-right: $line-height__base / 3;
+  margin-right: calc($line-height__base / 3);
 }
 
 .box__title {
@@ -36,6 +36,6 @@
 .box__text {
   font-size: $font-size__small;
   line-height: $line-height__small;
-  margin-top: $line-height__small / 2;
+  margin-top: calc($line-height__small / 2);
   margin-bottom: 0;
 }
