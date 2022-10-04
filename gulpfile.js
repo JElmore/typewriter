@@ -19,6 +19,6 @@ function watch(cb) {
     cb();
   }
 
-exports.default = sass
+exports.default = watch
 exports.build = sass
 exports.watch = watch
