@@ -1,6 +1,6 @@
 {
   "name": "typewriter",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Typewriter Ghost Theme (originally from Aspire Themes, maintained by Jay Elmore)",
   "main": "gulpfile.js",
   "keywords": ["ghost-theme"],
