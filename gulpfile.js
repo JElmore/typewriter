@@ -1,48 +1,24 @@
-(function() {
+const gulp         = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const cleancss     = require('gulp-clean-css');
+const rename       = require('gulp-rename');
+const gsass        = require('gulp-sass')(require('sass'));
 
-  'use strict';
+function sass(cb) {
+  gulp.src('./assets/sass/*.scss')
+  .pipe(gsass())
+  .pipe(autoprefixer())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(cleancss())
+  .pipe(gulp.dest('./assets/css'));
+  cb();
+}
 
-  // Include Gulp & tools
-  var gulp = require('gulp'),
-      sass         = require('gulp-sass'),
-      cleancss    = require('gulp-clean-css'),
-      autoprefixer = require('gulp-autoprefixer'),
-      runSequence  = require('run-sequence'),
-      rename       = require('gulp-rename'),
-      plumber      = require('gulp-plumber'),
-      gutil        = require('gulp-util');
+function watch(cb) {
+    gulp.watch('./assets/sass/**/*.scss', sass);
+    cb();
+  }
 
-  var onError = function( err ) {
-    console.log('An error occurred:', gutil.colors.magenta(err.message));
-    gutil.beep();
-    this.emit('end');
-  };
-
-  // SASS
-  gulp.task('sass', function () {
-    return gulp.src('./assets/sass/*.scss')
-    .pipe(plumber({ errorHandler: onError }))
-    .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(cleancss())
-    .pipe(gulp.dest('./assets/css'));
-  });
-
-  // Watch
-  gulp.task('watch', function() {
-    gulp.watch('./assets/sass/**/*.scss', ['sass']);
-  });
-
-
-  // Build
-  gulp.task('build', [], function() {
-    runSequence('sass');
-  });
-
-  // Default
-  gulp.task('default', ['watch'], function() {
-    gulp.start('build');
-  });
-
-})();
+exports.default = sass
+exports.build = sass
+exports.watch = watch

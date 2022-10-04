@@ -5,14 +5,16 @@
   "main": "gulpfile.js",
   "keywords": ["ghost-theme"],
   "dependencies": {
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-minify-css": "^0.4.6",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.4",
-    "run-sequence": "^1.1.2",
-    "gulp-plumber": "^1.0.1",
-    "gulp-util": "^3.0.7"
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.55.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JElmore/typewriter"
   },
   "author": {
     "name": "Jay Elmore",
