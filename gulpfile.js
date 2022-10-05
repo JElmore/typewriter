@@ -3,6 +3,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleancss     = require('gulp-clean-css');
 const rename       = require('gulp-rename');
 const gsass        = require('gulp-sass')(require('sass'));
+const zip          = require('gulp-zip');
 
 function sass(cb) {
   gulp.src('./assets/sass/*.scss')
@@ -19,6 +20,13 @@ function watch(cb) {
     cb();
   }
 
-exports.default = watch
+function package(cb) {
+  gulp.src('./**/*')
+  .pipe(zip('typewriter.zip'))
+  .pipe(gulp.dest('..'));
+  cb();
+}
+
 exports.build = sass
-exports.watch = watch
+exports.default = watch
+exports.package = gulp.series(sass, package)
