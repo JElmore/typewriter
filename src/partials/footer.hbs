@@ -25,6 +25,14 @@
             </a>
           </li>
         {{/if}}
+        {{#if @blog.mastodon}}
+          <li>
+            <a href="{{mastodon_url}}" target="_blank">
+              <span data-icon="ei-link" data-size="s"></span>
+            </a>
+          </li>
+        {{/if}}
+
         </ul>
       </section>
     </div>
