@@ -33,6 +33,9 @@ function collect(cb) {
 
 function watch(cb) {
     gulp.watch('./src/assets/sass/*.scss', sass);
+    gulp.watch('./src/assets/js/*.js', collect);
+    gulp.watch('./src/partials/*.hbs', collect);
+    gulp.watch('./src/*.hbs', collect);
     cb();
   }
 
@@ -44,5 +47,6 @@ function package(cb) {
 }
 
 exports.build   = gulp.series(sass, collect)
-exports.default = watch
-exports.package = gulp.series(sass, collect, package)
+exports.default = gulp.series(sass, collect, watch)
+exports.package = package
+

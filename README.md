@@ -19,7 +19,6 @@ A minimalist Ghost theme with a focus on typography, whitespace, and giving your
 - Post sharing
 - 404 page
 - Next & previous post navigation
-- Social media icons from Font Awesome
 - Gulp & Sass source files
 
 -----
@@ -40,7 +39,7 @@ To start Gulp, run:
 gulp
 ```
 
-This will compile Sass and watching for changes; as you edit files, Gulp will compile the CSS automatically.
+This builds the theme and watches for changes; as you edit files in the src directory, Gulp will update the build automatically.
 
 To package the theme for upload to Ghost, run:
 
