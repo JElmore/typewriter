@@ -1,52 +1,52 @@
-const gulp         = require('gulp');
-const autoprefixer = require('gulp-autoprefixer');
-const cleancss     = require('gulp-clean-css');
-const rename       = require('gulp-rename');
-const gsass        = require('gulp-sass')(require('sass'));
-const zip          = require('gulp-zip');
+const { dest, series, src, watch } = require('gulp');
+const autoprefixer         = require('gulp-autoprefixer');
+const cleanCSS             = require('gulp-clean-css');
+const rename               = require('gulp-rename');
+const sass                 = require('gulp-sass')(require('sass'));
+const zip                  = require('gulp-zip');
 
-function sass(cb) {
-  gulp.src('./src/assets/sass/*.scss')
-  .pipe(gsass())
+function buildCSS(cb) {
+  src('./src/assets/sass/*.scss')
+  .pipe(sass())
   .pipe(autoprefixer())
   .pipe(rename({suffix: '.min'}))
-  .pipe(cleancss())
-  .pipe(gulp.dest('./build/assets/css'));
+  .pipe(cleanCSS())
+  .pipe(dest('./build/assets/css'));
   cb();
 }
 
 function collect(cb) {
-  gulp.src('./src/assets/js/*.js')
-  .pipe(gulp.dest('./build/assets/js'));
-  gulp.src('./src/partials/*.hbs')
-  .pipe(gulp.dest('./build/partials'));
-  gulp.src('./src/*.hbs')
-  .pipe(gulp.dest('./build'));
-  gulp.src('./package.json')
-  .pipe(gulp.dest('./build'));
-  gulp.src('./README.md')
-  .pipe(gulp.dest('./build'));
-  gulp.src('./LICENSE')
-  .pipe(gulp.dest('./build'));
+  src('./src/assets/js/*.js')
+  .pipe(dest('./build/assets/js'));
+  src('./src/partials/*.hbs')
+  .pipe(dest('./build/partials'));
+  src('./src/*.hbs')
+  .pipe(dest('./build'));
+  src('./package.json')
+  .pipe(dest('./build'));
+  src('./README.md')
+  .pipe(dest('./build'));
+  src('./LICENSE')
+  .pipe(dest('./build'));
   cb();
 }
 
-function watch(cb) {
-    gulp.watch('./src/assets/sass/*.scss', sass);
-    gulp.watch('./src/assets/js/*.js', collect);
-    gulp.watch('./src/partials/*.hbs', collect);
-    gulp.watch('./src/*.hbs', collect);
+function watchDirs(cb) {
+    watch('./src/assets/sass/*.scss', sass);
+    watch('./src/assets/js/*.js', collect);
+    watch('./src/partials/*.hbs', collect);
+    watch('./src/*.hbs', collect);
     cb();
   }
 
-function package(cb) {
-  gulp.src('./build/**/*')
+function createTheme(cb) {
+  src('./build/**/*')
   .pipe(zip('typewriter.zip'))
-  .pipe(gulp.dest('./package'));
+  .pipe(dest('./package'));
   cb();
 }
 
-exports.build   = gulp.series(sass, collect)
-exports.default = gulp.series(sass, collect, watch)
-exports.package = package
+exports.build   = series(buildCSS, collect)
+exports.default = series(buildCSS, collect, watchDirs)
+exports.package = createTheme
 
