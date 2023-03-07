@@ -3,7 +3,9 @@
   "version": "5.0.1",
   "description": "Typewriter Ghost Theme (originally from Aspire Themes, maintained by Jay Elmore)",
   "main": "gulpfile.js",
-  "keywords": ["ghost-theme"],
+  "keywords": [
+    "ghost-theme"
+  ],
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
