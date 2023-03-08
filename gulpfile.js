@@ -2,6 +2,7 @@ const { dest, parallel, series, src, watch } = require('gulp');
 const autoprefixer                           = require('gulp-autoprefixer');
 const gclean                                 = require('gulp-clean');
 const cleanCSS                               = require('gulp-clean-css');
+const evilIcons                              = require('gulp-evil-icons');
 const rename                                 = require('gulp-rename');
 const sass                                   = require('gulp-sass')(require('sass'));
 const uglify                                 = require('gulp-uglify');
@@ -11,6 +12,10 @@ function css(cb) {
   src('./src/assets/sass/*.scss')
   .pipe(sass())
   .pipe(autoprefixer())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(cleanCSS())
+  .pipe(dest('./build/assets/css'));
+  src('./src/assets/css/*.css')
   .pipe(rename({suffix: '.min'}))
   .pipe(cleanCSS())
   .pipe(dest('./build/assets/css'));
@@ -35,6 +40,7 @@ function clean(cb) {
 
 function hbs(cb) {
   src('./src/**/*.hbs')
+  .pipe(evilIcons())
   .pipe(dest('./build'));
   cb();
 }
@@ -43,6 +49,12 @@ function addDocs(cb) {
   src('./README.md')
   .pipe(dest('./build'));
   src('./LICENSE')
+  .pipe(dest('./build'));
+  cb();
+}
+
+function addPackageJSON(cb) {
+  src('./package.json')
   .pipe(dest('./build'));
   cb();
 }
@@ -61,8 +73,8 @@ function createZip(cb) {
   cb();
 }
 
-exports.build   = series(clean, css, js, hbs, addDocs, createZip);
+exports.build   = series(clean, css, js, hbs, addPackageJSON, addDocs);
 exports.clean   = clean;
-exports.default = series(clean, css, js, hbs, addDocs, createZip);
+exports.default = series(clean, css, js, hbs, addPackageJSON, addDocs, createZip);
 exports.package = createZip;
-exports.watch   = series(clean, css, js, hbs, addDocs, watchDirs);
+exports.watch   = series(clean, css, js, hbs, addPackageJSON, addDocs, watchDirs);
