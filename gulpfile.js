@@ -1,10 +1,11 @@
-const { dest, series, src, watch } = require('gulp');
-const autoprefixer         = require('gulp-autoprefixer');
-const cleanCSS             = require('gulp-clean-css');
-const rename               = require('gulp-rename');
-const sass                 = require('gulp-sass')(require('sass'));
-const uglify               = require('gulp-uglify');
-const zip                  = require('gulp-zip');
+const { dest, parallel, series, src, watch } = require('gulp');
+const autoprefixer                           = require('gulp-autoprefixer');
+const gclean                                 = require('gulp-clean');
+const cleanCSS                               = require('gulp-clean-css');
+const rename                                 = require('gulp-rename');
+const sass                                   = require('gulp-sass')(require('sass'));
+const uglify                                 = require('gulp-uglify');
+const zip                                    = require('gulp-zip');
 
 function css(cb) {
   src('./src/assets/sass/*.scss')
@@ -24,13 +25,21 @@ function js(cb) {
   cb();
 }
 
-function collect(cb) {
-  src('./src/partials/*.hbs')
-  .pipe(dest('./build/partials'));
-  src('./src/*.hbs')
+function clean(cb) {
+  src('./build/*', {read: false})
+  .pipe(gclean());
+  src('./package/*', {read: false})
+  .pipe(gclean());
+  cb();
+}
+
+function hbs(cb) {
+  src('./src/**/*.hbs')
   .pipe(dest('./build'));
-  src('./package.json')
-  .pipe(dest('./build'));
+  cb();
+}
+
+function addDocs(cb) {
   src('./README.md')
   .pipe(dest('./build'));
   src('./LICENSE')
@@ -39,21 +48,21 @@ function collect(cb) {
 }
 
 function watchDirs(cb) {
-    watch('./src/assets/sass/*.scss', sass);
+    watch('./src/assets/sass/*.scss', css);
     watch('./src/assets/js/*.js', js);
-    watch('./src/partials/*.hbs', collect);
-    watch('./src/*.hbs', collect);
+    watch('./src/**/*.hbs', hbs);
     cb();
   }
 
-function createTheme(cb) {
+function createZip(cb) {
   src('./build/**/*')
   .pipe(zip('typewriter.zip'))
   .pipe(dest('./package'));
   cb();
 }
 
-exports.build   = series(css, js, collect)
-exports.default = series(css, js, collect, watchDirs)
-exports.package = createTheme
-
+exports.build   = series(clean, css, js, hbs, addDocs, createZip);
+exports.clean   = clean;
+exports.default = series(clean, css, js, hbs, addDocs, createZip);
+exports.package = createZip;
+exports.watch   = series(clean, css, js, hbs, addDocs, watchDirs);
