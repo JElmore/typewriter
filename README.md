@@ -1,6 +1,6 @@
 # TypeWriter
 
-A minimalist Ghost theme with a focus on typography, whitespace, and giving your readers a better reading experience.
+A minimalist Ghost theme with a focus on clean typography, whitespace, and giving your readers a better reading experience.
 
 -----
 
@@ -36,7 +36,7 @@ npm install
 To start Gulp, run:
 
 ```bash
-gulp
+gulp watch
 ```
 
 This builds the theme and watches for changes; as you edit files in the src directory, Gulp will update the build automatically.
@@ -49,4 +49,4 @@ gulp package
 
 -----
 
-👉 Visit [aspirehemes.com](http://aspirethemes.com) for more Ghost, WordPress, and Jekyll themes.
+👉 Originally created by Aspire Themes. Visit [aspirehemes.com](http://aspirethemes.com) for more Ghost, WordPress, and Jekyll themes.

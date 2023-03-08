@@ -17,7 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-+ foo
++ Change Gulp targets
++ Replaced Evil Icons CDN support with NPM module and gulp task; SVGs are now inlined in .hbs files
++ Updated README
 
 ### Removed
 
