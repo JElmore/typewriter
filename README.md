@@ -1,4 +1,4 @@
-# TypeWriter
+# Typewriter
 
 A minimalist Ghost theme with a focus on clean typography, whitespace, and giving your readers a better reading experience.
 
@@ -25,7 +25,7 @@ A minimalist Ghost theme with a focus on clean typography, whitespace, and givin
 
 ## Theme Development
 
-TypeWriter uses [Gulp](https://github.com/gulpjs/gulp) to compile [Sass](http://sass-lang.com/). This improves the development flow, and makes it much faster.
+Typewriter uses [Gulp](https://github.com/gulpjs/gulp) to compile [Sass](http://sass-lang.com/). This improves the development flow, and makes it much faster.
 
 First make sure you have [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed, then run the following commands in the theme root directory to install npm dependencies.
 
