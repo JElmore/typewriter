@@ -17,13 +17,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-+ Change Gulp targets
-+ Replaced Evil Icons CDN support with NPM module and gulp task; SVGs are now inlined in .hbs files
-+ Updated README
++ foo
 
 ### Removed
 
 + foo
+
+## [5.0.3] - 2023-03-25
+
+### Added
+
++ Added gulp-uglify for JavaScript
+
+### Changed
+
++ Changed Gulp targets
++ Replaced Evil Icons CDN support with NPM module and gulp task; SVGs are now inlined in .hbs files
++ Replaced static copy of normalize.css with version from NPM
++ Updated README
 
 ## [5.0.2] - 2023-03-08
 
@@ -62,7 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-+ Add CSS and package.json metadata for Ghost v5 compatibility
++ Added CSS and package.json metadata for Ghost v5 compatibility
 + Updated calc() operations for Sass
 
 ### Changed
@@ -148,7 +159,8 @@ NOTE: v1.0.1 includes changes from a private fork of Typewriter for my (John's) 
 
 + Initial commit by Aspire Themes
 
-[unreleased]: https://github.com/JElmore/typewriter/compare/v5.0.2...HEAD
+[unreleased]: https://github.com/JElmore/typewriter/compare/v5.0.3...HEAD
+[5.0.3]: https://github.com/JElmore/typewriter/compare/v5.0.2...v5.0.3
 [5.0.2]: https://github.com/JElmore/typewriter/compare/v5.0.1...v5.0.2
 [5.0.1]: https://github.com/JElmore/typewriter/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/JElmore/typewriter/compare/v3.9.9...v5.0.0
