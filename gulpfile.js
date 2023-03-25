@@ -8,9 +8,11 @@ const sass                                   = require('gulp-sass')(require('sas
 const uglify                                 = require('gulp-uglify');
 const zip                                    = require('gulp-zip');
 
+const cssPaths = ['node_modules/evil-icons/assets', 'node_modules/normalize.css/']
+
 function css(cb) {
   src('./src/assets/sass/*.scss')
-  .pipe(sass())
+  .pipe(sass({includePaths: cssPaths}))
   .pipe(autoprefixer())
   .pipe(rename({suffix: '.min'}))
   .pipe(cleanCSS())
